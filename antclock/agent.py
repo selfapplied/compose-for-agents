@@ -140,11 +140,10 @@ def demonstrate_ce_optimization():
         baseline_model = BaselineModel(vocab_size=1000, embedding_dim=128, 
                                       hidden_dim=128, num_classes=2)
         
+        baseline_params = baseline_model.param_count
         if TORCH_AVAILABLE:
-            baseline_params = sum(p.numel() for p in baseline_model.parameters()) if hasattr(baseline_model, 'parameters') else baseline_model.param_count
             ce_params = sum(p.numel() for p in ce_model.parameters())
         else:
-            baseline_params = baseline_model.param_count
             # Estimate CE params
             ce_params = int(baseline_params * 1.2)  # CE typically has ~20% more params
         
@@ -189,7 +188,7 @@ def demonstrate_ce_optimization():
         print("-" * 70)
         baseline_model = BaselineModel(vocab_size=1000, embedding_dim=128,
                                       hidden_dim=128, num_classes=2)
-        baseline_params = baseline_model.param_count if hasattr(baseline_model, 'param_count') else 0
+        baseline_params = baseline_model.param_count
         print(f"Estimated parameters: {baseline_params}")
         print()
         
@@ -224,10 +223,15 @@ def demonstrate_ce_optimization():
     print("=" * 70)
     
     # Save results
-    with open('/tmp/antclock_demo_results.json', 'w') as f:
+    import os
+    output_dir = '/tmp/output'
+    os.makedirs(output_dir, exist_ok=True)
+    output_file = os.path.join(output_dir, 'antclock_demo_results.json')
+    
+    with open(output_file, 'w') as f:
         json.dump(results, f, indent=2)
     
-    print("\nResults saved to: /tmp/antclock_demo_results.json")
+    print(f"\nResults saved to: {output_file}")
     return results
 
 
