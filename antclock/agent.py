@@ -66,7 +66,6 @@ class AntClockOptimizedModel:
         self.num_classes = num_classes
         
         if ANTCLOCK_AVAILABLE and TORCH_AVAILABLE:
-            from antclock.learner import CELearningConfig
             self.config = CELearningConfig(
                 vocab_size=vocab_size,
                 embedding_dim=embedding_dim,
