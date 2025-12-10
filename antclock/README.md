@@ -4,7 +4,22 @@ This demo showcases the [AntClock](https://github.com/selfapplied/antclock) fram
 
 ## Overview
 
-AntClock is a mathematical framework that reconstructs the Riemann zeta function as a Galois covering space of the integers, built from curvature flows and digit symmetries. This demo demonstrates how to use AntClock's CE architecture to optimize models for agent systems.
+AntClock is a mathematical framework that reconstructs the Riemann zeta function as a Galois covering space of the integers, built from curvature flows and digit symmetries. This demo demonstrates how to integrate AntClock's CE (Coherence Engine) architecture into the compose-for-agents repository to optimize models for agent systems.
+
+### Problem Statement
+
+This demo addresses the requirement to "use https://github.com/selfapplied/antclock/ to optimize this model" by:
+
+1. Integrating the AntClock framework into the compose-for-agents ecosystem
+2. Demonstrating how CE architecture can optimize machine learning models
+3. Providing a Docker Compose setup for easy deployment
+4. Showing concrete examples of model optimization using discrete geometry
+
+The AntClock framework offers unique mathematical optimizations that can improve agent performance, particularly for tasks involving:
+- Compositional reasoning
+- Mathematical problem-solving
+- Discrete structure understanding
+- Sample-efficient learning
 
 ## Features
 
@@ -24,16 +39,29 @@ docker compose -f compose.yaml -f compose.openai.yaml up
 
 ## What This Demo Does
 
-The demo creates an optimized text classification model using AntClock's Coherence Engine (CE) architecture:
+The demo demonstrates how to use AntClock's Coherence Engine (CE) architecture to optimize machine learning models used in agent systems. AntClock provides a mathematical framework based on the Riemann zeta function that can improve model performance through:
 
 1. **CE1 (Discrete Grammar)**: Corridor-based embeddings capture discrete geometric structures
+   - Maps integer sequences to geometric corridors between mirror shells
+   - Preserves digit symmetries and parity information
+   - Provides better representations for compositional tasks
+
 2. **CE2 (Dynamical Flow)**: Flow operators model continuous transformations
+   - Uses curvature flows to guide learning dynamics
+   - Implements bifurcation-aware training schedules
+   - Adapts learning rates based on geometric properties
+
 3. **CE3 (Emergent Simplicial)**: Witness consistency ensures topological invariants
+   - Maintains topological consistency during training
+   - Provides regularization through geometric constraints
+   - Ensures model predictions preserve structural properties
 
 The CE architecture provides several advantages over traditional models:
 - Better handling of discrete structures through corridor embeddings
 - Improved generalization via geometric regularization
 - Built-in topological consistency checks
+- Sample efficiency through curvature-aware learning
+- Mathematical grounding in number theory and geometry
 
 ## Architecture
 
