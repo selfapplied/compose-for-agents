@@ -1,0 +1,11 @@
+services:
+  antclock-agent:
+    environment:
+      - USE_OPENAI=true
+      - OPENAI_API_KEY_FILE=/run/secrets/openai-api-key
+    secrets:
+      - openai-api-key
+
+secrets:
+  openai-api-key:
+    file: ${OPENAI_API_KEY_FILE:-secret.openai-api-key}
