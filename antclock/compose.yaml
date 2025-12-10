@@ -1,0 +1,16 @@
+services:
+  antclock-agent:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: antclock-optimizer
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./output:/tmp/output
+    networks:
+      - antclock-net
+
+networks:
+  antclock-net:
+    driver: bridge
