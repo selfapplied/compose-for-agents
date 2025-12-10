@@ -160,6 +160,29 @@ def demonstrate_ce_optimization():
         print("✓ Built-in regularization through geometric constraints")
         print()
         
+        print("5. Benchmark Performance")
+        print("-" * 70)
+        print("AntClock includes comprehensive benchmarking across three layers:")
+        print()
+        print("Synthetic Biome (CE-Core):")
+        print("  • CE1: Mirror-phase classification, curvature regression")
+        print("  • CE2: Gauss map convergence, flow field integration")
+        print("  • CE3: Factorization complexes, simplicial homology")
+        print()
+        print("Metabolic Layer (Timing):")
+        print("  • κ-Guardian early stopping (κ=0.35)")
+        print("  • χ-FEG learning rate modulation (χ=0.638)")
+        print("  • Phase transition detection and bifurcation tracking")
+        print()
+        print("Phenotype Layer (Standard Tasks):")
+        print("  • SCAN (16.7K train): Compositional generalization")
+        print("  • COGS (24.2K train): Compositional language")
+        print("  • CFQ (10K train): Compositional questions")
+        print("  • PCFG/RPM/Math: Grammar, reasoning, mathematics")
+        print()
+        print("Run full benchmarks: cd antclock_repo && make benchmarks")
+        print()
+        
         results = {
             "status": "success",
             "antclock_available": True,
@@ -173,6 +196,16 @@ def demonstrate_ce_optimization():
                 "baseline_params": baseline_params,
                 "ce_params": ce_params,
                 "efficiency_ratio": float(baseline_params / ce_params)
+            },
+            "benchmark_info": {
+                "synthetic_biome": ["CE1: Discrete Geometry", "CE2: Dynamical Flow", "CE3: Simplicial Topology"],
+                "metabolic_layer": {"kappa_guardian": 0.35, "chi_feg": 0.638},
+                "phenotype_tasks": {
+                    "SCAN": {"train": 16728, "test": 4182, "metric": "accuracy"},
+                    "COGS": {"train": 24155, "test": 3000, "metric": "exact_match"},
+                    "CFQ": {"train": 10000, "test": 2000, "metric": "accuracy"},
+                    "PCFG": {"train": 1000, "test": 200, "metric": "parse_accuracy"}
+                }
             }
         }
     else:
@@ -211,10 +244,22 @@ def demonstrate_ce_optimization():
         print("  - Provides theoretical guarantees on model behavior")
         print()
         
+        print("✓ Benchmark Performance:")
+        print("  - Tested on SCAN, COGS, CFQ, PCFG, RPM, Math benchmarks")
+        print("  - Three-layer evaluation: Synthetic biome, Metabolic, Phenotype")
+        print("  - κ-Guardian early stopping and χ-FEG learning rate modulation")
+        print("  - See: https://github.com/selfapplied/antclock#benchmarks")
+        print()
+        
         results = {
             "status": "demo_mode",
             "antclock_available": False,
-            "message": "Install AntClock to see full CE optimization"
+            "message": "Install AntClock to see full CE optimization",
+            "benchmark_info": {
+                "layers": ["CE1: Discrete Geometry", "CE2: Dynamical Flow", "CE3: Simplicial Topology"],
+                "tasks": ["SCAN", "COGS", "CFQ", "PCFG", "RPM", "Math"],
+                "metrics": ["Accuracy", "Exact match", "Parse accuracy", "Solution accuracy"]
+            }
         }
     
     print("=" * 70)

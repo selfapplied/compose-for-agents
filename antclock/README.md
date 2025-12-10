@@ -71,6 +71,77 @@ The demo includes:
 - `Dockerfile`: Container setup with AntClock dependencies
 - `requirements.txt`: Python dependencies
 
+## Benchmarks
+
+AntClock uses a comprehensive three-layer benchmarking system called the **Sentinel Node Architecture**:
+
+### 1. Synthetic Biome (CE-Core Benchmarks)
+
+Tests the internal structure of the CE framework:
+
+- **CE1 (Discrete Geometry)**
+  - Mirror-phase shell classification
+  - Curvature field regression  
+  - Digit symmetry breaking patterns
+
+- **CE2 (Dynamical Flow)**
+  - Gauss map convergence analysis
+  - Flow field integration
+  - Period-doubling bifurcation tracking
+
+- **CE3 (Simplicial Topology)**
+  - Factorization complex classification
+  - Simplicial homology regression
+  - Vertex/edge/face coherence inference
+
+### 2. Metabolic Layer (Timing Integration)
+
+Measures convergence acceleration and adaptation:
+
+- **κ-Guardian Events**: Early stopping based on curvature stabilization
+- **χ-FEG Modulation**: Learning rate adaptation via field geometry
+- **Phase Transitions**: Bifurcation-aware training dynamics
+
+### 3. Phenotype Layer (Standard ML Tasks)
+
+Real-world validation on established benchmarks:
+
+| Task | Description | Dataset Size | Metric |
+|------|-------------|--------------|--------|
+| **SCAN** | Compositional generalization | 16.7K train / 4.2K test | Accuracy |
+| **COGS** | Compositional language | 24.2K train / 3K test | Exact match |
+| **CFQ** | Compositional questions | 10K train / 2K test | Accuracy |
+| **PCFG** | Grammar induction | 1K train / 200 test | Parse accuracy |
+| **RPM** | Abstract reasoning | 10K train / 1K test | Accuracy |
+| **Math** | Mathematical reasoning | 1K train / 200 test | Solution accuracy |
+
+### Benchmark Visualization
+
+The AntClock repository includes visualization showing CE performance across layers:
+
+![AntClock CE Benchmark Performance](https://raw.githubusercontent.com/selfapplied/antclock/main/antclock.png)
+
+The visualization demonstrates how CE1/CE2/CE3 layers work together to optimize model performance through discrete geometry and curvature flows.
+
+### Running Benchmarks
+
+To run the full benchmark suite with AntClock installed:
+
+```bash
+# Install AntClock with dependencies
+pip install git+https://github.com/selfapplied/antclock.git
+pip install torch transformers datasets scikit-learn
+
+# Run complete benchmark pipeline
+cd antclock_repo
+make benchmarks
+
+# Or run specific benchmark layers
+./run.sh benchmarks/benchmark.py --biome=synthetic
+./run.sh benchmarks/benchmark.py --biome=metabolic
+./run.sh benchmarks/benchmark.py --biome=phenotype --tasks=scan,cogs
+```
+
 ## Performance
 
 The CE architecture typically shows improvements in:
@@ -78,6 +149,7 @@ The CE architecture typically shows improvements in:
 - Generalization to out-of-distribution data
 - Compositional understanding
 - Mathematical reasoning tasks
+- Convergence acceleration through geometric regularization
 
 ## Testing
 
