@@ -108,12 +108,12 @@ Real-world validation on established benchmarks:
 
 | Task | Description | Dataset Size | Metric |
 |------|-------------|--------------|--------|
-| **SCAN** | Compositional generalization | 16.7K train / 4.2K test | Accuracy |
-| **COGS** | Compositional language | 24.2K train / 3K test | Exact match |
-| **CFQ** | Compositional questions | 10K train / 2K test | Accuracy |
-| **PCFG** | Grammar induction | 1K train / 200 test | Parse accuracy |
-| **RPM** | Abstract reasoning | 10K train / 1K test | Accuracy |
-| **Math** | Mathematical reasoning | 1K train / 200 test | Solution accuracy |
+| **SCAN** | Compositional generalization | 16,728 train / 4,182 test | Accuracy |
+| **COGS** | Compositional language | 24,155 train / 3,000 test | Exact match |
+| **CFQ** | Compositional questions | 10,000 train / 2,000 test | Accuracy |
+| **PCFG** | Grammar induction | 1,000 train / 200 test | Parse accuracy |
+| **RPM** | Abstract reasoning | 10,000 train / 1,000 test | Accuracy |
+| **Math** | Mathematical reasoning | 1,000 train / 200 test | Solution accuracy |
 
 ### Benchmark Visualization
 

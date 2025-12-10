@@ -12,6 +12,16 @@ from typing import List, Dict, Any
 import json
 import sys
 
+# Benchmark dataset sizes from AntClock repository
+BENCHMARK_DATASETS = {
+    "SCAN": {"train": 16728, "test": 4182, "metric": "accuracy"},
+    "COGS": {"train": 24155, "test": 3000, "metric": "exact_match"},
+    "CFQ": {"train": 10000, "test": 2000, "metric": "accuracy"},
+    "PCFG": {"train": 1000, "test": 200, "metric": "parse_accuracy"},
+    "RPM": {"train": 10000, "test": 1000, "metric": "accuracy"},
+    "Math": {"train": 1000, "test": 200, "metric": "solution_accuracy"}
+}
+
 # Import AntClock CE architecture
 try:
     from antclock.architecture import CEArchitecture, create_ce_model
@@ -175,10 +185,10 @@ def demonstrate_ce_optimization():
         print("  • Phase transition detection and bifurcation tracking")
         print()
         print("Phenotype Layer (Standard Tasks):")
-        print("  • SCAN (16.7K train): Compositional generalization")
-        print("  • COGS (24.2K train): Compositional language")
-        print("  • CFQ (10K train): Compositional questions")
-        print("  • PCFG/RPM/Math: Grammar, reasoning, mathematics")
+        print(f"  • SCAN ({BENCHMARK_DATASETS['SCAN']['train']} train): Compositional generalization")
+        print(f"  • COGS ({BENCHMARK_DATASETS['COGS']['train']} train): Compositional language")
+        print(f"  • CFQ ({BENCHMARK_DATASETS['CFQ']['train']} train): Compositional questions")
+        print(f"  • PCFG/RPM/Math ({BENCHMARK_DATASETS['PCFG']['train']}/{BENCHMARK_DATASETS['RPM']['train']}/{BENCHMARK_DATASETS['Math']['train']} train): Grammar, reasoning, mathematics")
         print()
         print("Run full benchmarks: cd antclock_repo && make benchmarks")
         print()
@@ -200,12 +210,7 @@ def demonstrate_ce_optimization():
             "benchmark_info": {
                 "synthetic_biome": ["CE1: Discrete Geometry", "CE2: Dynamical Flow", "CE3: Simplicial Topology"],
                 "metabolic_layer": {"kappa_guardian": 0.35, "chi_feg": 0.638},
-                "phenotype_tasks": {
-                    "SCAN": {"train": 16728, "test": 4182, "metric": "accuracy"},
-                    "COGS": {"train": 24155, "test": 3000, "metric": "exact_match"},
-                    "CFQ": {"train": 10000, "test": 2000, "metric": "accuracy"},
-                    "PCFG": {"train": 1000, "test": 200, "metric": "parse_accuracy"}
-                }
+                "phenotype_tasks": BENCHMARK_DATASETS
             }
         }
     else:
@@ -257,8 +262,7 @@ def demonstrate_ce_optimization():
             "message": "Install AntClock to see full CE optimization",
             "benchmark_info": {
                 "layers": ["CE1: Discrete Geometry", "CE2: Dynamical Flow", "CE3: Simplicial Topology"],
-                "tasks": ["SCAN", "COGS", "CFQ", "PCFG", "RPM", "Math"],
-                "metrics": ["Accuracy", "Exact match", "Parse accuracy", "Solution accuracy"]
+                "phenotype_tasks": BENCHMARK_DATASETS
             }
         }
     
