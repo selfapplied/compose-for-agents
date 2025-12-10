@@ -79,6 +79,43 @@ The CE architecture typically shows improvements in:
 - Compositional understanding
 - Mathematical reasoning tasks
 
+## Testing
+
+The demo builds successfully and runs in both:
+1. **Full mode** (when AntClock is available with all dependencies)
+   - Demonstrates actual CE architecture with curvature walker
+   - Shows parameter counts and model comparisons
+   - Generates visualizations of geometric flows
+
+2. **Fallback mode** (showing what AntClock would provide)
+   - Explains the CE architecture components
+   - Estimates model parameters
+   - Documents the mathematical concepts
+
+The fallback mode ensures the demo works even in environments with SSL certificate issues during build.
+
+### Running the Demo
+
+```bash
+# Standard mode
+cd antclock
+docker compose up --build
+
+# Clean up
+docker compose down
+
+# View results
+cat output/antclock_demo_results.json
+```
+
+### Expected Output
+
+The demo will display:
+- Baseline model parameter count (~259k parameters)
+- CE architecture explanation with three layers
+- Mathematical foundations of the optimization
+- Results saved to `output/antclock_demo_results.json`
+
 ## References
 
 - [AntClock GitHub Repository](https://github.com/selfapplied/antclock)
